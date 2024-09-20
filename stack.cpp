@@ -23,3 +23,58 @@ Stack::Stack(const Stack& copy)
         c_elements[i] = copy.c_elements[i];
      }
 }
+Stack::~Stack()
+{
+    delete[] c_elements;
+}
+
+bool Stack::IsEmpty()
+{
+    if (c_top == -1)
+    {
+        return true;
+    }
+    else
+    {
+        return 0;
+    }
+}
+bool Stack::IsFull()
+{
+    if (c_top == c_maxSize)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+void Stack::Push(int data)
+{  if (this->IsFull())
+{    std::cout << "Stack is full \n";
+    return;
+}
+
+
+    c_top++;
+   c_elements[c_top] = data;
+}
+
+void Stack::Pop()
+{
+    if (this->IsEmpty())
+    {
+        std::cout << "Stack is empty \n";
+        return;
+    }
+    c_top--;
+}
+void Stack::printElem()
+{
+      for (int i = 0; i <= c_top; i++)
+     {
+         std::cout << c_elements[i] << '\n';
+     }
+   
+}

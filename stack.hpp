@@ -11,22 +11,18 @@ public:
     Stack();
 
 
-    Stack(int size);
+    Stack(int);
 
 
-    Stack(const Stack& other);
+    Stack(const Stack&);
 
 
     ~Stack();
 
-    void Push(int value);
-
-    int Pop();
-
-
+    void Push(int);
+    void Pop();
+    void printElem();
     bool IsEmpty();
-
-
     bool IsFull();
 };
 
