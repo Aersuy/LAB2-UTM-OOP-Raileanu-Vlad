@@ -1,4 +1,4 @@
-
+// trebuie de facut inmultirea a 2 matrice
 class Matrix
 {
 private:
@@ -17,14 +17,15 @@ public:
     Matrix(int,int);
     Matrix(const Matrix&);
     ~Matrix();
+    void printMatrix;
     void dealocare();
     void alocare(int,int);
     void returnM();
     void setM(int,int);
     void addM(const Matrix&);
     void subtractM(const Matrix&);
-    void multiplyM(const Matrix&);
-    void multiplyNumber();
+    Matrix multiplyM(const Matrix&);
+    void multiplyNumber(int);
 };
 
 

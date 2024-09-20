@@ -80,3 +80,70 @@ void Matrix::returnM()
    std::cout << c_i << " randuri \n";
    std::cout << c_j << " coloane \n";
 }
+void Matrix::addM(const Matrix& m)
+{
+    if (c_i != m.c_i || c_j != m.c_j)
+    {
+        c_error = 2;
+        std::cout << "Marime diferite \n";
+    }
+    for (int iterator1 = 0; iterator1 < c_i; iterator1++)
+    {
+        for (int iterator2 = 0; iterator2 < c_j; iterator2++)
+        {
+            c_elem[iterator1][iterator2] += m.c_elem[iterator1][iterator2];
+        }
+        
+    }
+    
+    
+}
+void Matrix::subtractM(const Matrix& m)
+{
+    if (c_i != m.c_i || c_j != m.c_j)
+    {
+        c_error = 2;
+        std::cout << "Marime diferite \n";
+    }
+    for (int iterator1 = 0; iterator1 < c_i; iterator1++)
+    {
+        for (int iterator2 = 0; iterator2 < c_j; iterator2++)
+        {
+            c_elem[iterator1][iterator2] -= m.c_elem[iterator1][iterator2];
+        }
+        
+    }
+    
+}
+Matrix Matrix::multiplyM(const Matrix& m)
+{
+    if (c_i != m.c_j)
+    {   std::cout << "Eroare de marime";
+        c_error = 2;
+        return;
+    }
+    Matrix n(c_i,m.c_j);
+    
+    for (int iterator1 = 0; iterator1 < c_i; iterator1++) {
+        for (int iterator2 = 0; iterator2 < m.c_j; iterator2++) {
+ 
+            for (int iterator3 = 0; iterator3 < m.c_i; iterator3++) {
+                 n.c_elem[iterator1][iterator2] += c_elem[iterator1][iterator3]* m.c_elem[iterator3][iterator1];
+            }
+        }
+
+    }
+    return n;
+}
+void Matrix::multiplyNumber(int num)
+{
+    for (int iterator1 = 0; iterator1 < c_i; iterator1++)
+    {
+      for (int iterator2 = 0; iterator2 < c_j; iterator2++)
+      {
+        c_elem[iterator1][iterator2] = c_elem[iterator1][iterator2] * num; 
+      }
+         
+    }
+    
+}
