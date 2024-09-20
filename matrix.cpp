@@ -128,7 +128,7 @@ Matrix Matrix::multiplyM(const Matrix& m)
         for (int iterator2 = 0; iterator2 < m.c_j; iterator2++) {
  
             for (int iterator3 = 0; iterator3 < m.c_i; iterator3++) {
-                 n.c_elem[iterator1][iterator2] += c_elem[iterator1][iterator3]* m.c_elem[iterator3][iterator1];
+                 n.c_elem[iterator1][iterator2] += c_elem[iterator1][iterator3]* m.c_elem[iterator3][iterator2];
             }
         }
 
