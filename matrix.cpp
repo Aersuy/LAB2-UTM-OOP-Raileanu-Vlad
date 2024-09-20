@@ -120,7 +120,7 @@ Matrix Matrix::multiplyM(const Matrix& m)
     if (c_i != m.c_j)
     {   std::cout << "Eroare de marime";
         c_error = 2;
-        return;
+        return *this;
     }
     Matrix n(c_i,m.c_j);
     
@@ -143,6 +143,32 @@ void Matrix::multiplyNumber(int num)
       {
         c_elem[iterator1][iterator2] = c_elem[iterator1][iterator2] * num; 
       }
+         
+    }
+    
+}
+void Matrix::fillMatrix()
+{
+    for (int iterator1 = 0; iterator1 < c_i; iterator1++)
+    {
+      for (int iterator2 = 0; iterator2 < c_j; iterator2++)
+      {
+        std::cout << "Da urmatorul numar \n";
+        std::cin >> c_elem[iterator1][iterator2];
+      }
+         
+    }
+    
+}
+void Matrix::printMatrix()
+{
+    for (int iterator1 = 0; iterator1 < c_i; iterator1++)
+    {
+      for (int iterator2 = 0; iterator2 < c_j; iterator2++)
+      {
+        std::cout << c_elem[iterator1][iterator2] << ' ';
+      }
+      std::cout << '\n';
          
     }
     

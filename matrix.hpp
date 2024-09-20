@@ -17,7 +17,8 @@ public:
     Matrix(int,int);
     Matrix(const Matrix&);
     ~Matrix();
-    void printMatrix;
+    void fillMatrix();
+    void printMatrix();
     void dealocare();
     void alocare(int,int);
     void returnM();
