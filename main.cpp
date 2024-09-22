@@ -3,8 +3,9 @@
 #include "menu.cpp"
 int main()
 {
-   Matrix m1,m2,m3;
+   Matrix matrix1,matrix2,matrix3;
    Stack s1;
+   int num1,num2;
    int alegere1{1};
    int alegere2,num;
 
@@ -74,9 +75,71 @@ int main()
             break;
          }
       }
+      break;
+      
+      case 2:
+      alegere2 = 1;
+      while (alegere2 != 0)
+      {
+         matrixMenu();
+         std::cin >> alegere2;
+
+         switch (alegere2)
+         {
+         case 1:
+           std::cout << "Da marimea matricei \n";
+           std::cin >> num1;
+           matrix1 = Matrix(num1);
+            break;
+         case 2:
+            std::cout << "Da marimea matricei(2 parametri)\n";
+           std::cin >> num1 >> num2;
+           matrix1 = Matrix(num1,num2); 
+         break;
+
+         case 3:
+            std::cout << "Da marimea noua a matrici(i si j)\n";
+            std::cin >> num1 >> num2;
+             matrix1.setM(num1,num2);
+         break;
+
+         case 4:
+           std::cout << "Apasa 1 pentru matricea 1 si 2 pentru matricea 2 \n";
+           std::cin >> num1;
+           if (num1 == 1)
+           {
+            matrix1.fillMatrix();
+           }
+           else
+           {
+            matrix2.fillMatrix();
+           }
+           
+         break;
+
+         case 5:
+           matrix2.subtractM(matrix1);
+         break;
+
+         case 6:
+           matrix1.addM(matrix2);
+         break;
+
+         case 7:
+         matrix3 = Matrix(matrix1.multiplyM(matrix2));
+         break;
+
+         case 8:
+           matrix1.printMatrix();
+           matrix2.printMatrix();
+           matrix3.printMatrix();
+         break;
+         default:
+            break;
+         }
+      }
       
       break;
-   
    default:
       break;
    }

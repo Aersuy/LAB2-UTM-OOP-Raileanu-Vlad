@@ -72,7 +72,6 @@ void Matrix::setM(int i, int j)
 {
    c_i = i;
    c_j = j;
-   dealocare();
    alocare(c_i,c_j);
 }
 void Matrix::returnM()
@@ -172,4 +171,23 @@ void Matrix::printMatrix()
          
     }
     
+}
+
+Matrix& Matrix::operator=(const Matrix& other)
+{
+    c_i = other.c_i;
+    c_j = other.c_j;
+    c_error = other.c_error;
+    this->alocare(c_j,c_i);
+
+    for (int iterator1 = 0; iterator1 < c_i; iterator1++)
+    {
+        for (int iterator2 = 0; iterator2 < c_j; iterator2++)
+        {
+            c_elem[iterator1][iterator2] = other.c_elem[iterator1][iterator2];
+        }
+        
+    }
+    
+    return *this;
 }
