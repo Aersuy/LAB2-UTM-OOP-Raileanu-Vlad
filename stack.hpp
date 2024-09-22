@@ -9,16 +9,9 @@ private:
 public:
   
     Stack();
-
-
     Stack(int);
-
-
     Stack(const Stack&);
-
-
     ~Stack();
-
     void Push(int);
     void Pop();
     void printElem();

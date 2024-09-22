@@ -41,7 +41,7 @@ bool Stack::IsEmpty()
 }
 bool Stack::IsFull()
 {
-    if (c_top == c_maxSize)
+    if (c_top == c_maxSize-1)
     {
         return true;
     }
