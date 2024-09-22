@@ -27,6 +27,7 @@ public:
     void subtractM(const Matrix&);
     Matrix multiplyM(const Matrix&);
     void multiplyNumber(int);
+    Matrix& operator=(const Matrix&);
 };
 
 
